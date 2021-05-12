@@ -56,7 +56,7 @@ Note: exactly above is what we should improve in Dockwalk and BoatInternational.
 
 CLS scores higher if space is reserved for Multi-size ad slots.
 
-[Minimize layout shift | Google Publisher Tag | Google Developers](https://developers.google.com/publisher-tag/guides/minimize-layout-shift#multisize)
+[Minimize layout shift](https://developers.google.com/publisher-tag/guides/minimize-layout-shift#multisize)
 
 ## CLS (generic)
 
