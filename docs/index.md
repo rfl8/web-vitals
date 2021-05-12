@@ -1,10 +1,10 @@
-# Guide to improve web-vitals
+# Fail-fast approach to improve web-vitals
 
-### FCP
+## FCP
 
 FCP measures how long it takes the browser to render the first piece of DOM content after a user navigates to your page. Images, non-white `canvas` elements, and SVGs on your page are considered DOM content; anything inside an iframe /isn’t/ included.
 
-#### Theory
+### Theory
 
 - Lazy-load third-party resources [Efficiently load third-party JavaScript](https://web.dev/efficiently-load-third-party-javascript/#lazy-load-third-party-resources)
 - Establish early connections to required origins using `preconnect` `dns-prefetch`
@@ -14,7 +14,7 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 - [Skip effects](https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects) only until certain dependencies have changed if you are using the Effect hook to improve runtime performance.
 - [Avoid an excessive DOM size](https://web.dev/dom-size/#react)
 
-#### Fail-fast principle
+### Fail-fast approach
 
 - Use a “windowing” library specially when rendering tons of cards above the fold.
 
@@ -27,62 +27,64 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 
 - Use image on load hook, https://usehooks-typescript.com/react-hook/use-image-on-load. Practical use-case, https://react-gallery-ux.netlify.app/
 
-### LCP
+## LCP
 
 Largest Contentful Paint marks the time at which the largest text or image is painted.
 
-#### Fail-fast principle
+### Fail-fast approach
 
 - Use next/image component with a custom loader to call our lambda
-  loader: [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#loader)
-  lambda: https://github.com/thebyte9/image-cdn-utils/blob/master/packages/image-cdn-utils/README.md
+  - loader: [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#loader)
+  - lambda: https://github.com/thebyte9/image-cdn-utils/blob/master/packages/image-cdn-utils/README.md
 - Create a new admin attribute to set `priority` attribute to images above the fold to be preloaded.
 
   - [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#priority)
 
 - Use intersection-observer to lazy load images above the fold.
 
-### CLS (ad-related layout shift)
+## CLS (ad-related layout shift)
 
 Measures layout shifts that were caused by ads or happened near ads. Reducing cumulative ad-related layout shift will improve user experience. [Learn more](https://developers.google.com/publisher-ads-audits/reference/audits/cumulative-ad-shift?utm_source=lighthouse&utm_medium=devtools) .
 
-#### Theory
+### Theory
 
 [Optimize Cumulative Layout Shift](https://web.dev/optimize-cls/)
 
 Note: exactly above is what we should improve in Dockwalk and BoatInternational.
 
-#### Fail-fast principle
+### Fail-fast approach
 
-CLS score will be higher if you reserve space for Multi-size ad slots. [Minimize layout shift | Google Publisher Tag | Google Developers](https://developers.google.com/publisher-tag/guides/minimize-layout-shift#multisize)
+CLS scores higher if space is reserved for Multi-size ad slots.
 
-### CLS (not ad-related)
+[Minimize layout shift | Google Publisher Tag | Google Developers](https://developers.google.com/publisher-tag/guides/minimize-layout-shift#multisize)
+
+## CLS (generic)
 
 Measures ad-related content layout shifts
 
-#### Fail-fast principle
+### Fail-fast approach
 
 Build skeleton components and render skeleton screens to avoid any layout shifts and comply with business constraints such as multiple add sizes.
 
 We don’t need to use any external react library. It could be accomplished by just using CSS, e.g [Animation - Tailwind CSS](https://tailwindcss.com/docs/animation#pulse)
 
-### Speed Index
+## Speed Index
 
 Speed Index measures how quickly content is visually displayed during page load.
 
-#### Theory
+### Theory
 
 - [Minimize main thread work](https://web.dev/mainthread-work-breakdown)
 - [Reduce JavaScript execution time](https://web.dev/bootup-time)
 - [Ensure text remains visible during webfont load](https://web.dev/font-display)
 
-#### Fail-fast principle
+### Fail-fast approach
 
 - Defer and eliminate render-blocking resources.
 - [Eliminate render-blocking resources](https://web.dev/render-blocking-resources/)
 - Use web workers to minimise main thread work as execution takes place in different threads.
 
-### Eliminate unused Javascript and CSS on main page
+## Eliminate unused Javascript and CSS on main page
 
 [Find Unused JavaScript And CSS With The Coverage Tab - Chrome Developers](https://developer.chrome.com/docs/devtools/coverage/)
 
