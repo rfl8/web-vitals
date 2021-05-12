@@ -2,8 +2,6 @@
 
 ### FCP
 
-#### What?
-
 FCP measures how long it takes the browser to render the first piece of DOM content after a user navigates to your page. Images, non-white `canvas` elements, and SVGs on your page are considered DOM content; anything inside an iframe /isn’t/ included.
 
 #### Theory
@@ -18,19 +16,18 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 
 #### Fail-fast principle
 
-* Use a “windowing” library specially when rendering tons of cards above the fold.
+- Use a “windowing” library specially when rendering tons of cards above the fold.
 
-* Use infinite scrolling alongside a windowing technique.
+- Use infinite scrolling alongside a windowing technique.
 
-* Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times.
+- Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times.
 
-* Use service-workers to cache scripts from third-party servers
-[Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
+- Use service-workers to cache scripts from third-party servers
+  [Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
 
-* Use image on load hook, https://usehooks-typescript.com/react-hook/use-image-on-load. Practical use-case, https://react-gallery-ux.netlify.app/
+- Use image on load hook, https://usehooks-typescript.com/react-hook/use-image-on-load. Practical use-case, https://react-gallery-ux.netlify.app/
+
 ### LCP
-
-#### What?
 
 Largest Contentful Paint marks the time at which the largest text or image is painted.
 
@@ -47,8 +44,6 @@ Largest Contentful Paint marks the time at which the largest text or image is pa
 
 ### CLS (ad-related layout shift)
 
-#### What?
-
 Measures layout shifts that were caused by ads or happened near ads. Reducing cumulative ad-related layout shift will improve user experience. [Learn more](https://developers.google.com/publisher-ads-audits/reference/audits/cumulative-ad-shift?utm_source=lighthouse&utm_medium=devtools) .
 
 #### Theory
@@ -63,8 +58,6 @@ CLS score could be improved by reserving space for Multi-size ad slots, [Minimiz
 
 ### CLS (not ad-related)
 
-#### What?
-
 Measures ad-related content layout shifts
 
 #### Fail-fast principle
@@ -74,8 +67,6 @@ Build skeleton components and render skeleton screens to avoid any layout shifts
 We don’t need to use any external react library. It could be accomplished by just using CSS, e.g [Animation - Tailwind CSS](https://tailwindcss.com/docs/animation#pulse)
 
 ### Speed Index
-
-#### What?
 
 Speed Index measures how quickly content is visually displayed during page load.
 
