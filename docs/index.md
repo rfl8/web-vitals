@@ -54,9 +54,7 @@ Note: exactly above is what we should improve in Dockwalk and BoatInternational.
 
 #### Fail-fast principle
 
-CLS score will be higher if you reserve space for Multi-size ad slots.
-
-[Minimize layout shift | Google Publisher Tag | Google Developers](https://developers.google.com/publisher-tag/guides/minimize-layout-shift#multisize)
+CLS score will be higher if you reserve space for Multi-size ad slots. [Minimize layout shift | Google Publisher Tag | Google Developers](https://developers.google.com/publisher-tag/guides/minimize-layout-shift#multisize)
 
 ### CLS (not ad-related)
 
