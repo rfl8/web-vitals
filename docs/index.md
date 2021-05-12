@@ -1,8 +1,4 @@
-## Fail-fast principle in software development
-
-https://dzone.com/articles/fail-fast-principle-in-software-development
-
-## Web vitals
+# Guide to improve web-vitals
 
 ### FCP
 
@@ -10,7 +6,7 @@ https://dzone.com/articles/fail-fast-principle-in-software-development
 
 FCP measures how long it takes the browser to render the first piece of DOM content after a user navigates to your page. Images, non-white `canvas` elements, and SVGs on your page are considered DOM content; anything inside an iframe /isn’t/ included.
 
-##### Theory
+#### Theory
 
 - Lazy-load third-party resources [Efficiently load third-party JavaScript](https://web.dev/efficiently-load-third-party-javascript/#lazy-load-third-party-resources)
 - Establish early connections to required origins using `preconnect` `dns-prefetch`
@@ -54,7 +50,7 @@ Largest Contentful Paint marks the time at which the largest text or image is pa
 
 Measures layout shifts that were caused by ads or happened near ads. Reducing cumulative ad-related layout shift will improve user experience. [Learn more](https://developers.google.com/publisher-ads-audits/reference/audits/cumulative-ad-shift?utm_source=lighthouse&utm_medium=devtools) .
 
-##### Theory
+#### Theory
 
 [Optimize Cumulative Layout Shift](https://web.dev/optimize-cls/)
 
@@ -82,7 +78,7 @@ We don’t need to use any external react library. It could be accomplished by j
 
 Speed Index measures how quickly content is visually displayed during page load.
 
-##### Theory
+#### Theory
 
 - [Minimize main thread work](https://web.dev/mainthread-work-breakdown)
 - [Reduce JavaScript execution time](https://web.dev/bootup-time)
@@ -97,3 +93,7 @@ Speed Index measures how quickly content is visually displayed during page load.
 ### Eliminate unused Javascript and CSS on main page
 
 [Find Unused JavaScript And CSS With The Coverage Tab - Chrome Developers](https://developer.chrome.com/docs/devtools/coverage/)
+
+## Fail-fast principle in software development
+
+https://dzone.com/articles/fail-fast-principle-in-software-development
