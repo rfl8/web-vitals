@@ -34,7 +34,7 @@ Largest Contentful Paint marks the time at which the largest text or image is pa
 
 ### Fail-fast approach
 
-[ ] Use next/image component with a custom loader to call our lambda
+[ ] Use next/image component with a custom loader to call our lambda.
 
 [ ] loader: [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#loader)
 
