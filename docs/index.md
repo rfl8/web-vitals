@@ -17,11 +17,15 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 ### Fail-fast approach
 
 [ ] Use a “windowing” library specially when rendering tons of cards above the fold.
+
 [ ] Use infinite scrolling alongside a windowing technique.
+
 [ ] Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times.
-[ ] Use service-workers to cache scripts from third-party servers
-[Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
+
+[ ] Use service-workers to cache scripts from third-party servers. [Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
+
 [ ] Use image on load hook, https://usehooks-typescript.com/react-hook/use-image-on-load. Practical use-case, https://react-gallery-ux.netlify.app/
+
 [ ] Minimize unnecessary re-renders using [shouldComponentUpdate](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action) , [PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) , or [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) .
 
 ## LCP
