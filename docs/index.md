@@ -7,7 +7,7 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 ### Theory
 
 - Lazy-load third-party resources [Efficiently load third-party JavaScript](https://web.dev/efficiently-load-third-party-javascript/#lazy-load-third-party-resources)
-- Establish early connections to required origins using `preconnect` `dns-prefetch`
+- Establish early connections to required origins using `preconnect` and `dns-prefetch`.
   [Efficiently load third-party JavaScript](https://web.dev/efficiently-load-third-party-javascript/#lazy-load-third-party-resources)
 - Use a “windowing” library like [react-window](https://web.dev/virtualize-long-lists-react-window/) to minimize the number of DOM nodes created if you are rendering many repeated elements on the page.
 - Minimize unnecessary re-renders using [shouldComponentUpdate](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action) , [PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) , or [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) .
@@ -16,18 +16,20 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 
 ### Fail-fast approach
 
-1. Use a “windowing” library specially when rendering tons of cards above the fold.
+1. Use a `windowing` library specially when rendering tons of cards above the fold.
 
 2. Use infinite scrolling alongside a windowing technique.
 
-3. Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times.
+3. Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times if you cannot use preconnect/preload.
 
 4. Use service-workers to cache scripts from third-party servers.
-   [Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
+   [Handle Third Party Requests](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
 
 5. Use image on load hook, https://usehooks-typescript.com/react-hook/use-image-on-load. Practical use-case, https://react-gallery-ux.netlify.app/
 
 6. Minimize unnecessary re-renders using [shouldComponentUpdate](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action) , [PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) , or [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) .
+
+7. Do not use `useEffect` without properly setting the array of dependencies. [Skip effects](https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects)
 
 ## LCP
 
@@ -37,15 +39,13 @@ Largest Contentful Paint marks the time at which the largest text or image is pa
 
 1. Use next/image component with a custom loader to call our lambda.
 
-2. [next/image](https://nextjs.org/docs/api-reference/next/image#loader)
+- [next/image](https://nextjs.org/docs/api-reference/next/image#loader)
 
-3. [lambda](https://github.com/thebyte9/image-cdn-utils/blob/master/packages/image-cdn-utils/README.md)
+- [lambda](https://github.com/thebyte9/image-cdn-utils/blob/master/packages/image-cdn-utils/README.md)
 
-4. Create a new admin attribute to set `priority` attribute to images above the fold to be preloaded.
+2. Create a new admin attribute to set `priority` attribute to images above the fold to be preloaded. [next/image](https://nextjs.org/docs/api-reference/next/image#priority)
 
-5. Use next/image priority attribute [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#priority)
-
-6. Use intersection-observer to lazy load images above the fold.
+3. Use intersection-observer to lazy load images above the fold.
 
 ## CLS (ad-related layout shift)
 
@@ -83,14 +83,13 @@ Speed Index measures how quickly content is visually displayed during page load.
 
 ### Fail-fast approach
 
-1. Defer and eliminate render-blocking resources.
-2. [Eliminate render-blocking resources](https://web.dev/render-blocking-resources/)
-3. Use web workers to minimise main thread work as execution takes place in different threads.
+1. Defer and eliminate render-blocking resources. [Eliminate render-blocking resources](https://web.dev/render-blocking-resources/)
+2. Use web workers to minimise main thread work as execution takes place in different threads.
 
 ## Eliminate unused Javascript and CSS on main page
 
 1. [Find Unused JavaScript And CSS With The Coverage Tab - Chrome Developers](https://developer.chrome.com/docs/devtools/coverage/)
 
-## Fail-fast principle in software development
+## Reference
 
-https://dzone.com/articles/fail-fast-principle-in-software-development
+[Fail-fast principle in software development](https://dzone.com/articles/fail-fast-principle-in-software-development)
