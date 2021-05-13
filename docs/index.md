@@ -16,18 +16,18 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 
 ### Fail-fast approach
 
-[ ] Use a “windowing” library specially when rendering tons of cards above the fold.
+1. Use a “windowing” library specially when rendering tons of cards above the fold.
 
-[ ] Use infinite scrolling alongside a windowing technique.
+2. Use infinite scrolling alongside a windowing technique.
 
-[ ] Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times.
+3. Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times.
 
-[ ] Use service-workers to cache scripts from third-party servers.
-[Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
+4. Use service-workers to cache scripts from third-party servers.
+   [Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
 
-[ ] Use image on load hook, https://usehooks-typescript.com/react-hook/use-image-on-load. Practical use-case, https://react-gallery-ux.netlify.app/
+5. Use image on load hook, https://usehooks-typescript.com/react-hook/use-image-on-load. Practical use-case, https://react-gallery-ux.netlify.app/
 
-[ ] Minimize unnecessary re-renders using [shouldComponentUpdate](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action) , [PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) , or [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) .
+6. Minimize unnecessary re-renders using [shouldComponentUpdate](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action) , [PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) , or [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) .
 
 ## LCP
 
@@ -35,17 +35,17 @@ Largest Contentful Paint marks the time at which the largest text or image is pa
 
 ### Fail-fast approach
 
-[ ] Use next/image component with a custom loader to call our lambda.
+1. Use next/image component with a custom loader to call our lambda.
 
-[ ] loader: [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#loader)
+2. [next/image](https://nextjs.org/docs/api-reference/next/image#loader)
 
-[ ] lambda: https://github.com/thebyte9/image-cdn-utils/blob/master/packages/image-cdn-utils/README.md
+3. [lambda](https://github.com/thebyte9/image-cdn-utils/blob/master/packages/image-cdn-utils/README.md)
 
-[ ] Create a new admin attribute to set `priority` attribute to images above the fold to be preloaded.
+4. Create a new admin attribute to set `priority` attribute to images above the fold to be preloaded.
 
-[ ] [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#priority)
+5. Use next/image priority attribute [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#priority)
 
-[ ] Use intersection-observer to lazy load images above the fold.
+6. Use intersection-observer to lazy load images above the fold.
 
 ## CLS (ad-related layout shift)
 
@@ -69,13 +69,11 @@ Measures ad-related content layout shifts
 
 ### Fail-fast approach
 
-[ ] Build skeleton components and render skeleton screens to avoid any layout shifts and comply with business constraints such as multiple add sizes.
-
-[ ] We don’t need to use any external react library. It could be accomplished by just using CSS, e.g [Animation - Tailwind CSS](https://tailwindcss.com/docs/animation#pulse)
+1. Build skeleton components and render skeleton screens to avoid any layout shifts and comply with business constraints such as multiple add sizes. It could be accomplished by just using CSS, e.g [Animation - Tailwind CSS](https://tailwindcss.com/docs/animation#pulse)
 
 ## Speed Index
 
-[ ] Speed Index measures how quickly content is visually displayed during page load.
+Speed Index measures how quickly content is visually displayed during page load.
 
 ### Theory
 
@@ -85,13 +83,13 @@ Measures ad-related content layout shifts
 
 ### Fail-fast approach
 
-[ ] Defer and eliminate render-blocking resources.
-[ ] [Eliminate render-blocking resources](https://web.dev/render-blocking-resources/)
-[ ] Use web workers to minimise main thread work as execution takes place in different threads.
+1. Defer and eliminate render-blocking resources.
+2. [Eliminate render-blocking resources](https://web.dev/render-blocking-resources/)
+3. Use web workers to minimise main thread work as execution takes place in different threads.
 
 ## Eliminate unused Javascript and CSS on main page
 
-[Find Unused JavaScript And CSS With The Coverage Tab - Chrome Developers](https://developer.chrome.com/docs/devtools/coverage/)
+1. [Find Unused JavaScript And CSS With The Coverage Tab - Chrome Developers](https://developer.chrome.com/docs/devtools/coverage/)
 
 ## Fail-fast principle in software development
 
