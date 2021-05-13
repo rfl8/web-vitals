@@ -22,7 +22,8 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 
 [ ] Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times.
 
-[ ] Use service-workers to cache scripts from third-party servers. [Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
+[ ] Use service-workers to cache scripts from third-party servers.
+[Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
 
 [ ] Use image on load hook, https://usehooks-typescript.com/react-hook/use-image-on-load. Practical use-case, https://react-gallery-ux.netlify.app/
 
