@@ -20,7 +20,7 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 [ ] Use infinite scrolling alongside a windowing technique.
 [ ] Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times.
 [ ] Use service-workers to cache scripts from third-party servers
-      [Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
+[Handle Third Party Requests | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
 [ ] Use image on load hook, https://usehooks-typescript.com/react-hook/use-image-on-load. Practical use-case, https://react-gallery-ux.netlify.app/
 [ ] Minimize unnecessary re-renders using [shouldComponentUpdate](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action) , [PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) , or [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) .
 
@@ -31,10 +31,15 @@ Largest Contentful Paint marks the time at which the largest text or image is pa
 ### Fail-fast approach
 
 [ ] Use next/image component with a custom loader to call our lambda
+
 [ ] loader: [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#loader)
+
 [ ] lambda: https://github.com/thebyte9/image-cdn-utils/blob/master/packages/image-cdn-utils/README.md
+
 [ ] Create a new admin attribute to set `priority` attribute to images above the fold to be preloaded.
+
 [ ] [next/image | Next.js](https://nextjs.org/docs/api-reference/next/image#priority)
+
 [ ] Use intersection-observer to lazy load images above the fold.
 
 ## CLS (ad-related layout shift)
