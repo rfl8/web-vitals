@@ -20,7 +20,7 @@ FCP measures how long it takes the browser to render the first piece of DOM cont
 
 2. Use infinite scrolling alongside a windowing technique.
 
-3. Font-awesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times if you cannot use preconnect/preload.
+3. Fontawesome and third-party resources should be self-hosted when possible to avoid DNS lookup and round-trip times if you cannot use preconnect/preload when using third-party CDNs. In case of not being able to use Fontawesome CDN, we should use the [npm package](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers) and avoid to import CDN link in our Sass files.
 
 4. Use service-workers to cache scripts from third-party servers.
    [Handle Third Party Requests](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
@@ -54,8 +54,6 @@ Measures layout shifts that were caused by ads or happened near ads. Reducing cu
 ### Theory
 
 [Optimize Cumulative Layout Shift](https://web.dev/optimize-cls/)
-
-Note: exactly above is what we should improve in Dockwalk and BoatInternational.
 
 ### Fail-fast approach
 
